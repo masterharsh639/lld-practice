@@ -10,10 +10,10 @@ public class Game {
     private List<Move> moves;
 
     static class GameBuilder{
-        private  Board board;
         private List<Player> players;
-        private int currentPlayerIdx;
-        private GameStatus gameStatus;
-        private List<Move> moves;
+        public GameBuilder setPlayer(List<Player> players){
+            this.players=players;
+            return this;
+        }
     }
 }
