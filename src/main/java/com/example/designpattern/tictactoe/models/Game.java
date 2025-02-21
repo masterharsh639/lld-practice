@@ -2,6 +2,7 @@ package com.example.designpattern.tictactoe.models;
 
 import com.example.designpattern.tictactoe.Exceptions.InvalidBotCountException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
@@ -14,6 +15,13 @@ public class Game {
     static class GameBuilder{
         private List<Player> players;
 
+        private Game(GameBuilder gameBuilder){
+            this.players=gameBuilder.players;
+            int n =players.size();
+            int currentPlayerIndx=0;
+            this.moves = new ArrayList<>();
+            this.gameStatus=GameStatus.IN_PROGRESS;
+        }
         public GameBuilder setPlayer(List<Player> players) {
             this.players = players;
             return this;
@@ -29,7 +37,7 @@ public class Game {
                     throw new InvalidBotCountException("Al max only 1 player is allowed");
                 }
             }
-            return new Game(this);
+            return new Game();
         }
     }
 }
