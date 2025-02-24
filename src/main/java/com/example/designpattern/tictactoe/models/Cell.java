@@ -3,6 +3,7 @@ package com.example.designpattern.tictactoe.models;
 public class Cell {
     private int x;
     private int y;
+    private Player player;
 
     public Cell(int x,int y){
         this.x=x;
@@ -41,6 +42,4 @@ public class Cell {
     public void setX(int x) {
         this.x = x;
     }
-
-    private Player player;
 }

@@ -1,11 +1,7 @@
 package com.example.designpattern.tictactoe;
 
 import com.example.designpattern.tictactoe.controllers.GameController;
-import com.example.designpattern.tictactoe.models.Bot;
-import com.example.designpattern.tictactoe.models.BotLevel;
-import com.example.designpattern.tictactoe.models.HumanPlayer;
-import com.example.designpattern.tictactoe.models.Player;
-
+import com.example.designpattern.tictactoe.models.*;
 import java.util.Scanner;
 
 public class TicTaeToe {
@@ -36,5 +32,18 @@ public class TicTaeToe {
         }
         playerList.add(new Bot('B', "Bot - 1", botLevel));
     }
-    gameController.createGame(playerList);
+    Game game = GameController.createGame(playerList);
+
+    while(GameController.getGameStatus(game) == GameStatus.IN_PROGRESS){
+        gameController.printBoard(game);
+        gameController.makeMove(game);
+    }
+
+    if(gameController.getGameController() == GameStatus.WON){
+        Player winner = gameController.getWinner();
+        System.out.println(winner.getName() + " with symbol: " + winner.getSymbol() + " has won");
+        gameController.printBoard(game);
+    } else {
+        System.out.println("Game has drawn");
+    }
 }
