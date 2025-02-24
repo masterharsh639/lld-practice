@@ -69,9 +69,6 @@ public class Game {
             return;
         }
         this.currentPlayerIdx = (this.currentPlayerIdx+1) % this.players.size();
-
-
-
     }
 
     public Player getWinner() {

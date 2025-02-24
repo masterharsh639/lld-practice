@@ -11,6 +11,11 @@ public class HumanPlayer extends Player{
     }
 
     @Override
+    Pair<Integer, Integer> makeMove(Board board) {
+        return null;
+    }
+
+    @Override
     Pair<Integer,Integer> makeMove() {
         Scanner scan=new Scanner(System.in);
         System.out.println("Enter the value x : ");

@@ -39,5 +39,4 @@ public class Board {
     public List<List<Cell>> getGrid(){
         return grid;
     }
-
 }

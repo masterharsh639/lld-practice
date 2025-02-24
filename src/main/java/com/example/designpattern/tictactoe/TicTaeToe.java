@@ -18,6 +18,7 @@ public class TicTaeToe {
             Player humanPlayer = new HumanPlayer(symbol,name);
             playerList.add(humanPlayer);
         }
+
         System.out.println("Are bots going to play? (Y/N)");
         char level = scanner.next().charAt(0);
         BotLevel botLevel = BotLevel.EASY;
