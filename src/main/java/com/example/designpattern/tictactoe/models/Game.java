@@ -2,6 +2,8 @@ package com.example.designpattern.tictactoe.models;
 
 import ch.qos.logback.core.joran.sanity.Pair;
 import com.example.designpattern.tictactoe.Exceptions.InvalidBotCountException;
+import com.example.designpattern.tictactoe.strategies.winning_strategy.OrderOneWinningStrategy;
+import com.example.designpattern.tictactoe.strategies.winning_strategy.PlayerWonStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
